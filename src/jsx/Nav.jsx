@@ -8,6 +8,7 @@ var Nav = (props) => {
         <div className="logo">
           <h3 data-testid="navbar h3">Travel Like a Local</h3>
         </div>
+
         <div className="header-links">
         <Link to="/explore">Explore</Link>
         <Link to="/trips">Trips</Link>
@@ -16,9 +17,10 @@ var Nav = (props) => {
         {/* <div className="login-signup"> */}
           {/* {props.userName !== 'not logged in' && <span>Hello {props.userName}!     </span>} */}
           
-          {props.userName !== 'not logged in' && <a className="logout-button" href="logout">Logout</a>}
-          {props.userName === 'not logged in' && <a href="signup">SignUp</a>}
-          {props.userName === 'not logged in' && <a href="login">Login</a>}
+          {props.userName !== 'not logged in' && <a data-testid="logout" className="logout-button" href="logout">Logout</a>}
+          {props.userName === 'not logged in' && <a data-testid="signup" href="signup">SignUp</a>}
+          {props.userName === 'not logged in' && <a data-testid="login" href="login">Login</a>}
+
       </div>
     </nav>
   );
