@@ -3,10 +3,10 @@ import ReactDOM from "react-dom";
 
 var Nav = (props) => {
   return (
-    <nav className="navbar">
+    <nav className="navbar" data-testid="navbar">
       <div class="clearfix">
         <div className="logo">
-          <h3>Travel Like a Local</h3>
+          <h3 data-testid="navbar h3">Travel Like a Local</h3>
           <img />
         </div>
         <div className="login-signup">
