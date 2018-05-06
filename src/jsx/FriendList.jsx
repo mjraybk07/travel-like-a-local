@@ -10,7 +10,7 @@ class FriendList extends React.Component {
     //console.log(this.props.friendList);
     return (
       <div className="friend-list">
-        <p><span className="name">{this.props.userName} </span>these are your friends:</p>
+        <p><span data-testid="friendList-username" className="name">{this.props.userName}</span>these are your friends:</p>
         {this.props.friendList.map((friend) => <FriendListEntry friendID={friend.friendID} userID={this.props.userID} friend={friend.friendName} key={friend.friendID} handleFriendDelete={this.props.handleFriendDelete} />)}
       </div>
     );
