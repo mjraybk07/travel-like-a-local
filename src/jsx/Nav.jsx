@@ -3,9 +3,10 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 var Nav = (props) => {
   return (
-    <nav className="navbar">
+
+    <nav className="navbar" data-testid="navbar">
         <div className="logo">
-          <h3 className="tlal">Travel Like a Local</h3>
+          <h3 data-testid="navbar h3">Travel Like a Local</h3>
         </div>
         <div className="header-links">
         <Link to="/explore">Explore</Link>
