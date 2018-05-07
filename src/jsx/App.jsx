@@ -133,7 +133,7 @@ class App extends React.Component {
       var that = this;
       ajaxHandler.getPlacesFromGoogleMaps(location, function (suggestions) {
         
-        console.log('suggestion results......', suggestions); // RAW RESULTS FROM GOOGLE
+        //console.log('suggestion results......', suggestions); // RAW RESULTS FROM GOOGLE
         
         for (var i = 0; i < suggestions.length; i++) {
           if (suggestions[i].photos !== undefined) {
@@ -161,7 +161,7 @@ class App extends React.Component {
   handleAddSuggestion(location, suggestionName, suggestionLink) {
     var userName = this.state.userName;
     ajaxHandler.postNewSuggestion(userName, location, suggestionName, suggestionLink, function (response) {
-      console.log(response);
+      //console.log(response);
     });
   }
 
@@ -180,7 +180,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+    //console.log(this.props)
     return (
       <MuiThemeProvider>
         <div>
