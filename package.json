@@ -48,7 +48,7 @@
   "bugs": {
     "url": "https://github.com/BenevolentBactrians/travel-like-a-local/issues"
   },
-  "homepage": "https://github.com/jioakim/travel-like-a-local#readme",
+  "homepage": "https://github.com/BenevolentBactrians/travel-like-a-local#readme",
   "devDependencies": {
     "webpack-dev-server": "^1.16.5"
   }
