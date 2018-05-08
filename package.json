@@ -1,7 +1,7 @@
 {
   "name": "travel-like-a-local",
   "version": "1.0.0",
-  "description": "Travel like a local App - Team Loco",
+  "description": "Travel like a local App - Benevolent Bactrians",
   "main": "webpack.config.js",
   "scripts": {
     "start": "nodemon server.js",
@@ -41,12 +41,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jioakim/travel-like-a-local.git"
+    "url": "git+https://github.com/BenevolentBactrians/travel-like-a-local"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jioakim/travel-like-a-local/issues"
+    "url": "https://github.com/BenevolentBactrians/travel-like-a-local/issues"
   },
   "homepage": "https://github.com/jioakim/travel-like-a-local#readme",
   "devDependencies": {
