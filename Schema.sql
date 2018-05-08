@@ -74,6 +74,8 @@ CREATE TABLE IF NOT EXISTS `travelLocal`.`suggestions` (
   `suggestionName` VARCHAR(100) NOT NULL,
   `suggestionDescription` LONGTEXT NULL DEFAULT NULL,
   `photoLink` VARCHAR(2083) NULL DEFAULT NULL,
+  `lat` VARCHAR(100) NOT NULL,
+  `lng` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`ID`),
   INDEX `fk_suggestions_users_idx` (`userID` ASC),
   INDEX `fk_suggestions_destinations1_idx` (`destinationID` ASC),
