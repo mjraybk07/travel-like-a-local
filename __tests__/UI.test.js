@@ -15,7 +15,7 @@ console.log('fake user: ', user);
 const isDebugging = () => {
   const debugging_mode = {
     headless: false,  // define whether Chromium is open and running
-    slowMo: 0,      // slow down operations, was set to 250 (slow), currently set to 0 (fast)
+    slowMo: 255,      // slow down operations, was set to 250 (slow), currently set to 0 (fast)
     devtools: true   // open devtools
   }
   return process.env.NODE_ENV === 'debug' ? debugging_mode : {};
