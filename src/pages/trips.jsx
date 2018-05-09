@@ -42,7 +42,6 @@ class Trips extends React.Component {
         console.log(data)
         that.props.tripChange(data.data[0].planName)
         that.props.tripIdChange(data.data[0].ID)
-        that.props.updateTrips();
       })
     }
   }
@@ -99,6 +98,7 @@ class Trips extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return(
       <div className="trips">
         {this.props.suggestionList.length !== 0 && 
@@ -125,11 +125,11 @@ class Trips extends React.Component {
               <Popover
                 open={this.state.open}
                 anchorEl={this.state.anchorEl}
-                anchorOrigin= {{"horizontal":"left","vertical":"bottom"}}
-                targetOrigin={{"horizontal":"right","vertical":"top"}}
+                anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+                targetOrigin={{horizontal: 'middle', vertical: 'bottom'}}
                 onRequestClose={this.handleRequestClose}
               >
-                <Menu style={{margin: '10px'}} >
+                <Menu>
                   <Toggle
                     label="Friends"
                     defaultToggled={true}
@@ -177,8 +177,6 @@ const Top = styled.div`
   display:flex;
   align-items: center;
   height: 53px;
-  justify-content: space-between;
-  margin: 0 3rem;
 `
 
 export default Trips;
