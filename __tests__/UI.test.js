@@ -54,19 +54,39 @@ beforeAll(async() => {
 
 
 describe('on landing page load', () => {
-  
-  
-  
-  test('testing is functional', async() => {
+   
+  test('testing suite is functional', async() => {
     // simple test of jest functionality
-    expect(2+2).toBe(4);            
+    expect(2+2).toBe(4); 
+    console.log('Running landing page tests....')           
   }, 1600) // set timeout for test
   
-  test('landing page loads correctly', async () => {
+  test('Title loads correctly', async () => {
+    // check if github link exists
+    const title = await page.$eval('[data-testid="title"]', el => el.innerHTML );
+    console.log('loaded landing page title: ', title);
+    expect(title).toBe("Travel Like A Local");
+  }, 1600)
+  
+  test('get started button loads correctly', async () => {
     // check if submit button exists
-    const submitBtn = await page.$eval('[data-testid="submit-button"]', el => el ? true : false );
-    console.log('submitBtn: ', submitBtn)
-    expect(submitBtn).toBe(true);
+    const getStartedButton = await page.$eval('[data-testid="start-submit-button"]', el => el ? true : false );
+    console.log('get started button exists: ', getStartedButton)
+    expect(getStartedButton).toBe(true);
+  }, 1600)
+  
+  test('login link loads correctly', async () => {
+    // check if login link exists
+    const login = await page.$eval('[data-testid="login-link"]', el => el ? true : false );
+    console.log('login link exist: ', login);
+    expect(login).toBe(true);
+  }, 1600)
+  
+  test('github link loads correctly', async () => {
+    // check if github link exists
+    const github = await page.$eval('[data-testid="bactrians-link"]', el => el ? true : false );
+    console.log('team github link exists: ', github);
+    expect(github).toBe(true);
   }, 1600)
   
   
@@ -81,25 +101,32 @@ describe('on landing page load', () => {
   //   expect(html).toBe('Travel Like a Local')            
   // }, 1600)
   
-  
-  test('signup form works correctly', async() => {
-    // await page.click('[data-testid="signup"]')
-    // await page.click('[data-testid="username"]')
-    // await page.type('[data-testid="username"]', user.email)
+ })
+ 
+ describe('UI for get started action', () => { 
+ 
+  test('signup UI works correctly', async () => {
     
-    // await page.click('[data-testid="password"]')
-    // await page.type('[data-testid="password"]', user.password)
+    await page.click('[data-testid="start-submit-button"]')
     
-    // await page.click('[data-testid="submit-signup"]')
+    //await page.click('[data-testid="signup"]')
+    await page.click('[data-testid="username"]')
+    await page.type('[data-testid="username"]', user.email)
     
-    // await page.waitForSelector('[data-testid="friendList-username"]')
+    await page.click('[data-testid="password"]')
+    await page.type('[data-testid="password"]', user.password)
     
-    // const usernameSuccess = await page.$eval('[data-testid="friendList-username"]', e => e.innerHTML);
-    // console.log('signup success usernamme:', usernameSuccess);
+    await page.click('[data-testid="submit-signup"]')
     
-    // expect(usernameSuccess).toBe(user.email)
+    await page.waitForSelector(`[data-testid-user="${user.email}"]`)
     
-  }, 56600)
+    const usernameSuccess = await page.$eval(`[data-testid-user="${user.email}"]`, e => e ? true : false);
+    console.log('signup success usernamme success:', usernameSuccess, 'user: ', user.email);
+    
+    expect(usernameSuccess).toBe(true)
+    // TODO crosscheck with database
+    
+  }, 556600)
   
   
   // test('does not have any console.logs', () => {
